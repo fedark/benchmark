@@ -1,0 +1,3 @@
+﻿using Benchmark;
+
+ToLowerInLoopTest.Run();
