@@ -82,7 +82,7 @@ namespace Benchmark472
 		{
 			var random = new Random();
 			var n = array.Length;
-			
+
 			while (n > 1)
 			{
 				var k = random.Next(n--);

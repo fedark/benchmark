@@ -6,7 +6,7 @@ namespace Benchmark;
 [MemoryDiagnoser]
 public class ToLowerInLoopTest
 {
-	private string[] _strings =
+	private readonly string[] _strings =
 	[
 		"sofjsfjas[fj|",
 		"sofjsfdasfasfasfasfjas[fj|",
@@ -17,12 +17,12 @@ public class ToLowerInLoopTest
 		"sofjsdsfdsffjas[fj|"
 	];
 
-	private string _substr = "DB";
+	private readonly string _substr = "DB";
 
 	[Benchmark]
 	public bool ToLowerWithinLoop()
 	{
-		bool result = false;
+		var result = false;
 
 		foreach (var s in _strings)
 		{
@@ -35,7 +35,7 @@ public class ToLowerInLoopTest
 	[Benchmark]
 	public bool ToLowerOutsideLoop()
 	{
-		bool result = false;
+		var result = false;
 
 		var substr = _substr.ToLowerInvariant();
 
